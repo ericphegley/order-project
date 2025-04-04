@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-project
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: order-project
+  template:
+    metadata:
+      labels:
+        app: order-project
+    spec:
+      containers:
+      - name: order-project
+        image: phegley/order:latest
+        ports:
+        - containerPort: 8080
