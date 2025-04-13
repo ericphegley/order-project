@@ -23,7 +23,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy the JAR file from the build stage
-COPY --from=build /app/target/order-project-*.jar /app/order-project.jar
+COPY --from=build /app/target/order-ms-0.0.1-SNAPSHOT.jar /app/order-project.jar
 
 # Expose the port your app runs on (replace with your actual port)
 EXPOSE 8080
